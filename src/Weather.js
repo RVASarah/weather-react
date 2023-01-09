@@ -1,13 +1,62 @@
 import React from "react";
-import axios from "axios";
+import "./Weather.css";
 
 export default function Weather() {
-  function handleResponse(response) {
-    alert(`The weather in Washinton is ${response.data.temperature.current}°C`);
-  }
-  let apiKey = `d4a256f3bb9402t22bd7345b86oaccce`;
-  let units = `metric`;
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=Washington&key=${apiKey}&units=${units}`;
-  axios.get(apiUrl).then(handleResponse);
-  return <h2>Hello from Weather</h2>;
+  let weatherData = {
+    city: "Richmond",
+    temperature: "44",
+    date: "Monday 9:00",
+    imgUrl:
+      "https://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png",
+    description: "cloudy",
+    humidity: "50",
+    wind: "11",
+  };
+  return (
+    <div className="Weather">
+      <div className="overview">
+        <h1 id="city">{weatherData.city}</h1>
+        <ul>
+          <li id="date">{weatherData.date}</li>
+          <li id="description">{weatherData.description}</li>
+        </ul>
+        <div className="row">
+          <div className="col-4">
+            <div className="d-flex weather-temperature">
+              <div>
+                <strong id="temperature">{weatherData.temperature}</strong>
+                <span className="units">
+                  <span
+                    id="fahrenheit-link"
+                    className="active"
+                  >
+                    °F
+                  </span>
+                  |<span id="celsius-link">°C</span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className="col-4">
+            <img
+              className="weather-icon"
+              src={weatherData.imgUrl}
+              alt=""
+              id="icon"
+            />
+          </div>
+          <div className="col-4">
+            <ul>
+              <li>
+                Humidity: <span id="humidity">{weatherData.humidity}</span>%
+              </li>
+              <li>
+                Wind: <span id="wind">{weatherData.wind}</span> mph
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
