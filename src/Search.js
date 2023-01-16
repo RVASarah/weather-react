@@ -13,6 +13,7 @@ export default function Search() {
               type="search"
               placeholder="Enter a city..."
               className="form-control"
+              autoFocus="on"
               id="city-input"
               autocomplete="off"
             />
