@@ -11,7 +11,7 @@ export default function App() {
         <div className="weather-app-wrapper">
           <div className="weather-app">
             <Search />
-            <Weather defaultCity="Paris" />
+            <Weather defaultCity="Washington" />
             <Forecast />
           </div>
           <Footer />
