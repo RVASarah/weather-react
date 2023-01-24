@@ -6,9 +6,9 @@ export default function Weather(props) {
   return (
     <div className="Weather">
       <div className="overview">
-        <h1 id="city">{props.defaultCity.city}</h1>
+        <h1 id="city"></h1>
         <ul>
-          <li id="date">{/*<FormattedDate date={props.data.date}*/} </li>
+          <li id="date">{/*<FormattedDate date={props.data.date} /> */}</li>
           <li id="description">{/*{props.data.description} */}</li>
         </ul>
         <div className="row">
